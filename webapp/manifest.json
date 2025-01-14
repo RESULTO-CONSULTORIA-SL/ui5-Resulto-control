@@ -1,54 +1,92 @@
 {
     "_version": "1.1.0",
-
-	"sap.app": {
-		"id": "com.resulto.control",
-		"type": "application",
-		"applicationVersion": {
-			"version": "${version}"
-		}
-	},
-	"sap.ui": {
-		"technology": "UI5",
-		"icons": {},
-		"deviceTypes": {
-			"desktop": true,
-			"tablet": true,
-			"phone": true
-		}
-	},
-	"sap.ui5": {
-		"rootView": {
-			"viewName": "com.resulto.control.view.Main",
-			"type": "XML",
-			"async": true,
-			"id": "app"
-		},
-		"dependencies": {
-			"minUI5Version": "1.129.0",
-			"libs": {
-				"sap.ui.core": {},
-				"sap.m": {},
-				"sap.f": {},
-				"sap.uxap": {},
-				"sap.ui.comp": {},
-				"sap.viz": {}
-			}
-		},
-		"handleValidation": true,
-		"contentDensities": {
-			"compact": true,
-			"cozy": true
-		},
-
-		"config": {
-			"fullWidth": true
-		},
+    "sap.app": {
+        "id": "com.resulto.control",
+        "type": "application",
+        "applicationVersion": {
+            "version": "${version}"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {},
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "com.resulto.control.view.App",  
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.129.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {},
+                "sap.uxap": {},
+                "sap.ui.comp": {},
+                "sap.viz": {}
+            }
+        },
+        "handleValidation": true,
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "config": {
+            "fullWidth": true
+        },
         "models": {
-          "": {
-            "type": "sap.ui.model.json.JSONModel"
-          }
+            "": {
+                "type": "sap.ui.model.json.JSONModel"
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "com.resulto.control.view",
+                "controlId": "app",  
+                "controlAggregation": "pages",  
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "main",
+                    "target": "app"  
+                },
+                {
+                    "pattern": "usuario",
+                    "name": "usuario",
+                    "target": "usuario" 
+                },
+                {
+                    "pattern": "admin",
+                    "name": "admin",
+                    "target": "admin"  
+                }
+            ],
+            "targets": {
+                "app": {
+                    "viewName": "App",
+                    "viewLevel": 1
+                },
+                "usuario": {
+                    "viewName": "Usuario",
+                    "viewLevel": 2
+                },
+                "admin": {
+                    "viewName": "Administrador",
+                    "viewLevel": 2
+                }
+            }
         }
     }
-    
 }

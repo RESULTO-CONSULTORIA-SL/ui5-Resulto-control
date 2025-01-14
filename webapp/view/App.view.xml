@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="com.resulto.control.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+>
+    <App>
+        <pages>
+            <Page title="Página Principal">
+                <customHeader>
+                    <f:ShellBar
+                        title="Control Fichaje"
+                        homeIcon="static/logo_sap.png">
+                        <f:profile>
+                            <Avatar
+                                displaySize="XL"
+                                press="onPressProfile"
+                                initials="ABC"/>
+                        </f:profile>
+                        	<f:menu>
+			                    <Menu>
+                                    <MenuItem text="Usuario" press="onPressUsuario"/>
+                                    <MenuItem text="Administrador" press="onPressAdministrador"/>
+                                </Menu>
+                            </f:menu>
+                    </f:ShellBar>
+                </customHeader>
+                <content>
+                    <App id="nestedApp">
+                        <pages>
+                            <mvc:XMLView viewName="com.resulto.control.view.Usuario" id="usuarioView"/>
+                            <mvc:XMLView viewName="com.resulto.control.view.Administrador" id="adminView"/>
+                        </pages>
+                    </App>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

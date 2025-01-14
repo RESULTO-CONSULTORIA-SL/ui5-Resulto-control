@@ -1,0 +1,26 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="com.resulto.control.controller.Usuario"
+    displayBlock="true"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    >  
+    <f:DynamicPage id="usuario">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Control de horas del Usuario"/>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:content>
+            <VBox>
+                    <core:Fragment fragmentName="com.resulto.control.view.TimerFragment" type="XML" />
+                    <core:Fragment fragmentName="com.resulto.control.view.WorkDataTable" type="XML" />
+            </VBox>
+        </f:content>
+        
+    </f:DynamicPage>
+
+</mvc:View>

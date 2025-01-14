@@ -25,7 +25,7 @@ sap.ui.define(
 	MessageToast) {
     "use strict";
 
-    return Controller.extend("com.resulto.control.controller.Main", {
+    return Controller.extend("com.resulto.control.controller.Usuario", {
       timer: null,
       startTime: null,
       elapsedTime: 0,
@@ -231,6 +231,7 @@ sap.ui.define(
           var oDialog = this.getView().byId("confirmEndDialog");
           if (oDialog) {
             oDialog.setModel(oModel);
+            this.byId("editButton").setEnabled(true);
           }
         }
       },
@@ -277,7 +278,8 @@ sap.ui.define(
 
           var oDialog = this.getView().byId("confirmEndDialog");
           if (oDialog) {
-            oDialog.setModel(oModel); // Actualiza el diálogo con el nuevo modelo
+            oDialog.setModel(oModel); 
+            this.byId("editButton").setEnabled(true);
           }
         }
       },
@@ -346,7 +348,8 @@ sap.ui.define(
         // Cerrar el diálogo
         var oDialog = this.getView().byId("confirmEndDialog");
         if (oDialog) {
-          oDialog.setModel(oModel); // Actualiza el diálogo con el nuevo modelo
+          oDialog.setModel(oModel); 
+          this.byId("editButton").setEnabled(false);
           oDialog.close();
         }
       },

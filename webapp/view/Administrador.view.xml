@@ -1,0 +1,88 @@
+<mvc:View
+    controllerName="com.resulto.control.controller.Administrador"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:svm="sap.ui.comp.smartvariants"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+>
+    <f:DynamicPage id="admin">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Control de horas del Administrador"/>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" >
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem name="Nombre" label="Nombre Usuario" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <SearchField
+                                        id="searchNombre"
+                                        placeholder="Buscar por nombre..."
+                                        liveChange="onSearch" />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem name="Mes" label="Mes" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <SearchField
+                                        id="searchMes"
+                                        placeholder="Buscar por mes..."
+                                        liveChange="onSearch" />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Table id="table" items="{/Items}">
+                <columns>
+                    <Column>
+                        <Text text="Nombre"/>
+                    </Column>
+                    <Column>
+                        <Text text="Mes"/>
+                    </Column>
+                    <Column>
+                        <Text text="Fecha" />
+                    </Column>
+                    <Column>
+                        <Text text="Inicio de Jornada" />
+                    </Column>
+                    <Column>
+                        <Text text="Final de Jornada" />
+                    </Column>
+                    <Column>
+                        <Text text="Horas" />
+                    </Column>
+                    <Column>
+                        <Text text="Total Horas" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{name}"/>
+                            <Text text="{month}"/>
+                            <Text text="{date}"/>
+                            <Text text="{startTime}"/>
+                            <Text text="{endTime}"/>
+                            <Text text="{hours}"/>
+                            <Text text="{totalHours}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
