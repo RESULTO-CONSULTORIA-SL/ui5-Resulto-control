@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <HBox justifyContent="SpaceAround" width="100%">
+        <VBox >
+                <Button text="Iniciar Jornada" type="Accept" press="onStart" width="100%"/>
+                <Button text="Pausar Jornada" press="onPause" width="100%"/>
+                <Button text="Fin Jornada" type= "Reject" press="onEnd" width="100%"/>
+        </VBox>
+
+         <VBox justifyContent="Center" alignItems="Center" width="100%" class="sapUiSmallMarginTop">
+            <Text text="Fecha:"/>
+            <!-- DatePicker con la fecha actual -->
+            <DatePicker id="date" value="{/date}" width="250px" displayFormat="dd/MM/yyyy"/>
+        </VBox>
+        <VBox justifyContent="Center" alignItems="Center" width="100%" class="sapUiSmallMarginTop">
+             <Text text="Tiempo trabajado:" />
+            <TextArea id="time" rows="1" cols="20" editable="false" value="{/time}" width="200px" height="40px" textAlign="Center"/>
+        </VBox>
+        
+    </HBox>
+</core:FragmentDefinition>
+

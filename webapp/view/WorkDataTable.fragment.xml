@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    
+    <VBox>
+        <Table id="workTable" items="{/workData}">
+            <headerToolbar>
+                <OverflowToolbar id="otbSubheader">
+						<Title text="Control de horas" level="H2" />
+						<ToolbarSpacer />
+						<Button id="editButton" text="Editar" type="Transparent"
+							press="onEdit" />
+						<Button id="saveButton" text="Guardar" type="Transparent"
+							press="onSave" visible="false" />
+						<Button id="cancelButton" text="Cancelar" type="Transparent"
+							press="onCancel" visible="false" />
+                        <Button id="addButton" icon="sap-icon://add" type="Transparent"
+                            press="onAdd" visible="false"/>
+					</OverflowToolbar>
+            </headerToolbar>
+
+            <columns>
+                <Column>
+                    <Text text="Fecha" />
+                </Column>
+                <Column>
+                    <Text text="Inicio de Jornada" />
+                </Column>
+                <Column>
+                    <Text text="Final de Jornada" />
+                </Column>
+                <Column>
+                    <Text text="Horas" />
+                </Column>
+                <Column>
+                    <Text text="Total Horas" />
+                </Column>
+                <Column visible="false" id="Acciones">
+                    <Text text="Acciones" />
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{date}"/>
+                        <Text text="{startTime}"/>
+                        <Text text="{endTime}"/>
+                        <Text text="{hours}"/>
+                        <Text text="{totalHours}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </VBox>
+</core:FragmentDefinition>

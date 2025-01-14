@@ -1,0 +1,33 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="com.resulto.control.controller.Main"
+    displayBlock="true"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    id="app">  
+    <App>
+        <pages>
+            <Page title="Página Principal">
+               <customHeader>
+                    <f:ShellBar
+                        title="Interfaz Fichajes" 
+                        homeIcon="static/logo_sap.png">
+                        <f:profile>
+                            <Avatar
+							displaySize="XL"
+							press="onPress"
+							initials="ABC"/>
+                        </f:profile>
+                        
+                    </f:ShellBar>
+                </customHeader>
+                <content>
+                    <core:Fragment fragmentName="com.resulto.control.view.TimerFragment" type="XML" />
+                    <core:Fragment fragmentName="com.resulto.control.view.WorkDataTable" type="XML" />
+                </content>
+            </Page>
+        </pages>
+    </App>
+
+</mvc:View>

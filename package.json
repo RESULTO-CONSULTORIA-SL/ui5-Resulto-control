@@ -1,0 +1,14 @@
+{
+  "name": "com.resulto.control",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Control de horas",
+  "author": "Resulto",
+  "scripts": {
+      "start": "ui5 serve --o index.html ",
+      "build": "ui5 build "
+  },
+  "devDependencies": {
+      "@ui5/cli": "^4.0.12"
+  }
+}
