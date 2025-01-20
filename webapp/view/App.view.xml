@@ -5,8 +5,7 @@
     xmlns:f="sap.f"
     displayBlock="true"
     height="100%"
-    busyIndicatorDelay="0"
->
+    busyIndicatorDelay="0">
     <App>
         <pages>
             <Page title="Página Principal">
@@ -36,6 +35,17 @@
                         </pages>
                     </App>
                 </content>
+                <footer>
+                    <OverflowToolbar id="otbFooter">
+                        <ToolbarSpacer/>
+                        <Button type="Accept" text="Guardar" press="onSave">
+                            <layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+                        </Button>
+                        <Button type="Reject" text="Cancelar" press="onCancel">
+                            <layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+                        </Button>
+                    </OverflowToolbar>
+                </footer>
             </Page>
         </pages>
     </App>

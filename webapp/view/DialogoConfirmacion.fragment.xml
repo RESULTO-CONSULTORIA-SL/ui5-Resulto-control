@@ -1,5 +1,4 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-   
     <Dialog id="confirmEndDialog" title="Confirmación" type="Message">
         <content>
             <Text text="¿Está seguro de que desea terminar la jornada laboral?" />

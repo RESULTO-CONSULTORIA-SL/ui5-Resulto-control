@@ -1,21 +1,64 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-    <HBox justifyContent="SpaceAround" width="100%">
-        <VBox >
-                <Button text="Iniciar Jornada" type="Accept" press="onStart" width="100%"/>
-                <Button text="Pausar Jornada" press="onPause" width="100%"/>
-                <Button text="Fin Jornada" type= "Reject" press="onEnd" width="100%"/>
+    <HBox justifyContent="SpaceAround" width="100%" height="250px">
+         <VBox alignItems="Center" width="100%" class="sapUiSmallMarginTop">
+         <GenericTile header="Fecha" class="sapUiTinyMarginBegin" frameType="TwoByHalf">
+                <TileContent>
+                   <Text text="{/date}"/>
+                </TileContent>
+            </GenericTile>
         </VBox>
+        <VBox alignItems="Center" width="100%">
+                <GenericTile id="idStart" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                            header="Iniciar Jornada" press="onStart" frameType="TwoByHalf" 
+                            visible="{
+                                    parts : [
+                                        {path: 'visibilityRules>currentState'},
+                                        {value: 'idStart'}
+                                    ]
+                                    ,
+                                    formatter: '.formatter.isButtonVisible'
+                                    }">
+                    <TileContent>
+                        <ImageContent src="sap-icon://begin"/>
+                    </TileContent>
+                </GenericTile>
 
-         <VBox justifyContent="Center" alignItems="Center" width="100%" class="sapUiSmallMarginTop">
-            <Text text="Fecha:"/>
-            <!-- DatePicker con la fecha actual -->
-            <DatePicker id="date" value="{/date}" width="250px" displayFormat="dd/MM/yyyy"/>
+                <GenericTile id="idPause" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                            header="Pausar Jornada" press="onPause" frameType="TwoByHalf" 
+                            visible="{
+                                    parts : [
+                                        {path: 'visibilityRules>currentState'},
+                                        {value: 'idPause'}
+                                    ]
+                                    ,
+                                    formatter: '.formatter.isButtonVisible'
+                                    }">
+                        <TileContent>
+                            <ImageContent src="sap-icon://pause" />
+                        </TileContent>
+                </GenericTile>
+                <GenericTile id="idFinish" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                            header="Fin Jornada" press="onEnd" frameType="TwoByHalf" 
+                            visible="{
+                                    parts : [
+                                        {path: 'visibilityRules>currentState'},
+                                        {value: 'idFinish'}
+                                    ]
+                                    ,
+                                    formatter: '.formatter.isButtonVisible'
+                                    }">
+                        <TileContent>
+                            <ImageContent src="sap-icon://decline"/>
+                        </TileContent>
+                </GenericTile>
         </VBox>
-        <VBox justifyContent="Center" alignItems="Center" width="100%" class="sapUiSmallMarginTop">
-             <Text text="Tiempo trabajado:" />
-            <TextArea id="time" rows="1" cols="20" editable="false" value="{/time}" width="200px" height="40px" textAlign="Center"/>
+        <VBox  alignItems="Center" width="100%" class="sapUiSmallMarginTop">
+            <GenericTile header="Tiempo trabajado" class="sapUiTinyMarginBegin" frameType="OneByHalf">
+                <TileContent>
+                   <Text text="{/time}"/>
+                </TileContent>
+            </GenericTile>
         </VBox>
-        
     </HBox>
 </core:FragmentDefinition>
 

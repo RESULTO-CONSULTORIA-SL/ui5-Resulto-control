@@ -4,8 +4,7 @@
     controllerName="com.resulto.control.controller.Usuario"
     displayBlock="true"
     xmlns:f="sap.f"
-    xmlns:core="sap.ui.core"
-    >  
+    xmlns:core="sap.ui.core">  
     <f:DynamicPage id="usuario">
         <f:title>
             <f:DynamicPageTitle>
@@ -18,9 +17,9 @@
             <VBox>
                     <core:Fragment fragmentName="com.resulto.control.view.TimerFragment" type="XML" />
                     <core:Fragment fragmentName="com.resulto.control.view.WorkDataTable" type="XML" />
+                    <core:Fragment fragmentName="com.resulto.control.view.Observaciones" type="XML" />
             </VBox>
         </f:content>
-        
     </f:DynamicPage>
 
 </mvc:View>

@@ -1,5 +1,4 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-    
     <VBox>
         <Table id="workTable" items="{/workData}">
             <headerToolbar>
@@ -7,16 +6,47 @@
 						<Title text="Control de horas" level="H2" />
 						<ToolbarSpacer />
 						<Button id="editButton" text="Editar" type="Transparent"
-							press="onEdit" />
+							press="onEdit" 
+                            visible="{
+                                    parts : [
+                                        {path: 'visibilityRules>currentState'},
+                                        {value: 'editButton'}
+                                    ]
+                                    ,
+                                    formatter: '.formatter.isButtonVisible'
+                                    }"/>
 						<Button id="saveButton" text="Guardar" type="Transparent"
-							press="onSave" visible="false" />
+							press="onSave" 
+                            visible="{
+                                    parts : [
+                                        {path: 'visibilityRules>currentState'},
+                                        {value: 'saveButton'}
+                                    ]
+                                    ,
+                                    formatter: '.formatter.isButtonVisible'
+                                    }" />
 						<Button id="cancelButton" text="Cancelar" type="Transparent"
-							press="onCancel" visible="false" />
+							press="onCancel" 
+                            visible="{
+                                    parts : [
+                                        {path: 'visibilityRules>currentState'},
+                                        {value: 'cancelButton'}
+                                    ]
+                                    ,
+                                    formatter: '.formatter.isButtonVisible'
+                                    }" />
                         <Button id="addButton" icon="sap-icon://add" type="Transparent"
-                            press="onAdd" visible="false"/>
+                            press="onAdd" 
+                            visible="{
+                                    parts : [
+                                        {path: 'visibilityRules>currentState'},
+                                        {value: 'addButton'}
+                                    ]
+                                    ,
+                                    formatter: '.formatter.isButtonVisible'
+                                    }"/>
 					</OverflowToolbar>
             </headerToolbar>
-
             <columns>
                 <Column>
                     <Text text="Fecha" />
@@ -33,11 +63,19 @@
                 <Column>
                     <Text text="Total Horas" />
                 </Column>
-                <Column visible="false" id="Acciones">
+                <Column
+                 id="Acciones"
+                 visible="{
+                                    parts : [
+                                        {path: 'visibilityRules>currentState'},
+                                        {value: 'Acciones'}
+                                    ]
+                                    ,
+                                    formatter: '.formatter.isButtonVisible'
+                                    }" >
                     <Text text="Acciones" />
                 </Column>
             </columns>
-
             <items>
                 <ColumnListItem>
                     <cells>

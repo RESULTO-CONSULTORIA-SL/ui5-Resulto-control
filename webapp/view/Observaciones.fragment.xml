@@ -1,0 +1,8 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+    <VBox>
+        <Title text="Observaciones" level="H2"/>
+        <TextArea id="observaciones" rows="10" value="{/observaciones}" width="100%"/>
+    </VBox>
+</c:FragmentDefinition>

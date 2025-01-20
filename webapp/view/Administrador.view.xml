@@ -3,13 +3,10 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:f="sap.f"
-    xmlns:core="sap.ui.core"
     xmlns:fb="sap.ui.comp.filterbar"
-    xmlns:svm="sap.ui.comp.smartvariants"
     displayBlock="true"
     height="100%"
-    busyIndicatorDelay="0"
->
+    busyIndicatorDelay="0">
     <f:DynamicPage id="admin">
         <f:title>
             <f:DynamicPageTitle>
@@ -46,6 +43,16 @@
         </f:header>
         <f:content>
             <Table id="table" items="{/Items}">
+                <headerToolbar>
+                    <OverflowToolbar id="otbSubheader">
+                        <Button id="editarTabla"
+                            press="onEditTable" text="Editar" type="Transparent"/>
+                        <Button id="guardarCambios"
+                            press="onSaveChange" text="Guardar" type="Transparent"/>
+                        <Button id="cancelarCambios"
+                            press="onCancelChange" text="Cancelar" type="Transparent"/>
+                    </OverflowToolbar>
+                </headerToolbar>
                 <columns>
                     <Column>
                         <Text text="Nombre"/>
